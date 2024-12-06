@@ -1,0 +1,509 @@
+*{margin: 0;padding: 0; box-sizing: border-box;}
+ul{list-style-type: none}
+a{text-decoration: none;color: white;}
+
+:root {
+  --MainColor: #0E1217;
+  --SecondaryColor: #1A1F26;
+  --ThirthColor: #2D323B;
+  --TextColor1: white;
+  --TextColor2: #9FAAC4;
+  --EmphasisColor: #00FFC3;
+
+  --SpanFontSize:30px;
+}
+
+@font-face {
+  font-family: 'gotham';
+  src: url(/fonts/GothamBook.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'nodify';
+  src: url(/fonts/Azonix.otf) format('truetype');
+}
+
+html{
+  scrollbar-width: 2vh;
+  scrollbar-color: var(--EmphasisColor) var(--ThirthColor);
+}
+
+h1,h2{
+  font-family: 'gotham';
+}
+
+body {
+  color: var(--TextColor1);
+  background-color: var(--MainColor);
+  width: 100%;
+
+  font-family: 'gotham';
+}
+
+header{
+  height: 20vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+header ul{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo{
+  margin-right: 20px;
+  height: 120px;
+  width: auto;
+}
+
+.home{
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+main{
+  text-align: center;
+  min-height: 100vh;
+}
+
+footer ul{
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.container-fullscreen{
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*----------------------*/
+/*USER LOGIN && REGISTER*/
+/*----------------------*/
+
+.user-form{
+  width: 50%;
+  height: 60%;
+  background-color: var(--SecondaryColor);
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: var(--ThirthColor);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-form input{
+  padding: 10px 20px;
+  background-color: var(--ThirthColor);
+  color: var(--TextColor2);
+  border-radius: px;
+  border: var(--ThirthColor);
+  min-width: 50%;
+}
+
+.user-form button{
+  padding: 10px 20px;
+  background-color: var(--EmphasisColor);
+  color: var(--MainColor);
+  border-radius: 5px;
+  border: var(--EmphasisColor) solid;
+
+  min-width: 20%;
+}
+
+/*----------------------*/
+/*-------PROFILE--------*/
+/*----------------------*/
+
+.profile-container{
+  
+}
+
+.profile-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding-top: 15px;
+}
+
+.edit-profile-button{
+  padding: 10px 20px;
+  background-color: var(--SecondaryColor);
+  border-radius: 5px;
+  border: 1px var(--ThirthColor) solid;
+
+  min-width: 20%;
+}
+
+.profile-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-details{
+  display: flex;
+  flex-wrap: wrap;
+  color: var(--TextColor2);
+}
+
+.profile-details *{
+  flex-grow: 1;
+  padding: 15px 0;
+}
+
+.profile-card{
+
+}
+
+.profile-card img{
+  width: auto;
+  height: 180px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#profile-username{
+  font-size: large;
+}
+#profile-tag{
+  color: var(--TextColor2);
+}
+
+#profile-description{
+  text-align: left;
+}
+
+nav{
+  display: flex;
+  border-top: 1px solid var(--ThirthColor);
+  border-bottom: 1px solid var(--ThirthColor);
+}
+
+nav a{
+  padding: 25px 0;
+  flex-grow: 1;
+  color: var(--TextColor2);
+}
+
+nav a:hover{
+  background-color: var(--SecondaryColor);
+  transition: all ease 0.5s;
+}
+
+/*----------------------*/
+/*--------Posts---------*/
+/*----------------------*/
+
+.post-container{
+  margin: 40px 60px;
+  text-align: left;
+  min-width: 400px;
+}
+
+.post-container-grid{
+  padding: 20px;
+  border: 1px solid var(--ThirthColor);
+  border-radius: 10px;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(2,minmax(200px,1fr));
+  gap: 10px;
+}
+
+.post-profile-container{
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1 / 3;
+}
+
+.post-profile-container img{
+  width: auto;
+  height: 40px;
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.post-user-data{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 50px 1fr;
+}
+
+.post-user-data p:last-child{
+  font-size: 15px;
+  color: var(--TextColor2);
+}
+
+#post-options{
+  height: 30px;
+}
+
+.post-image{
+  height: 160px;
+  width: 240px;
+  border-radius: 10px;
+  justify-self: end;
+}
+
+.post-buttons-container{
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.post-button{
+  border-radius: 10px;
+  padding: 8px 20px;
+  background-color: var(--SecondaryColor);
+}
+
+.post-button img{
+  width: auto;
+  height: 30px;
+}
+
+@media (max-width: 600px){
+  .post-container-grid{
+    padding: 20px;
+    border: 1px solid var(--ThirthColor);
+    border-radius: 10px;
+  
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 10px;
+  }
+  .post-profile-container{
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1 / 1;
+  }
+  .post-image{
+    height: 160px;
+    width: 240px;
+    border-radius: 10px;
+    justify-self: start;
+  }
+}
+
+/*----------------------*/
+/*--------Aside---------*/
+/*----------------------*/
+
+aside{
+  
+}
+
+.aside-option{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.aside-option img{
+  height: 30px;
+  width: auto;
+}
+
+/*----------------------*/
+/*---------you----------*/
+/*----------------------*/
+
+.you-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--ThirthColor);
+}
+
+.you-option-container{
+  display: flex;
+  gap: 10px;
+}
+
+.you-option{
+  background-color: var(--SecondaryColor);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.you-option img{
+  width: auto;
+  height: 40px;
+}
+
+.you-option:first-child{
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.you-gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(4,200px);
+}
+
+.you-gallery-grid img:first-child{
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  width: auto;
+  height: 400px;
+}
+
+.you-gallery-grid img{
+  width: auto;
+  height: 200px;
+}
+
+.you-section-head{
+  display: grid;
+  grid-template-columns: repeat(2,minmax(100px,400px));
+  max-width: 800px;
+  padding: 20px 0;
+  align-items: center;
+}
+
+.you-section-head h1{
+  justify-self: start;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.you-section-head .you-option-container{
+  justify-self: end;
+}
+
+@media (max-width: 600px){
+  .you-section-head{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .you-section-head > *{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
+}
+/*---------top tracks----------*/
+
+.you-first-song{
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.you-first-song img{
+  width: auto;
+  height: 250px;
+}
+
+.you-section-main{
+  display: flex;
+  max-width: 800px;
+  height: 400px;
+  border: 1px solid var(--ThirthColor);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.you-list-song{
+  overflow: scroll;
+}
+
+.you-list-row:first-child{
+  border-bottom: 1px solid var(--ThirthColor);
+}
+
+.you-list-row{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 40px repeat(3,minmax(100px,200px));
+  grid-template-rows: 50px;
+  overflow: hidden;
+}
+
+/*--------My BENTO----------*/
+
+.you-bento-grid{
+  max-width: 800px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.you-bento-item-polls{
+  grid-row: 1 / 5;
+}
+
+.you-bento-item-genders{
+  grid-row: 2 / 4;
+}
+
+.you-bento-item-badges{
+  grid-row: 1 / 3;
+}
+
+.you-bento-item-time{
+  grid-row: 3 / 5;
+}
+
+.you-bento-item{
+  border-radius: 10px;
+  border: 1px solid var(--ThirthColor);
+  padding: 20px;
+}
+
+.you-bento-grid h2{
+  margin-bottom: 20px;
+}
+
+.you-polls-option{
+  border-radius: 10px;
+  border: 1px solid var(--ThirthColor);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.you-polls-option img{
+  max-width: 80px;
+  border-radius: 10px;
+}
+
+.music-tag-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.music-tag{
+  border-radius: 5px;
+  border: 1.5px solid var(--EmphasisColor);
+  padding: 5px 10px;
+}
+
+.week-grid{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+}

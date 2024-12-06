@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+    div(class="container-fullscreen")
+        form(method="post" action="register" class="user-form" )
+            h2 Register 
+            input(type="text", name="username", placeholder="Username")
+            input(type="password", name="password", placeholder="Password")
+            button(type="submit") Register
+            a(href="login") Login Here

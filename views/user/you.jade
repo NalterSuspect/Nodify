@@ -1,0 +1,82 @@
+extends ../layout
+
+block content
+    div(class="you-section")
+        div(class="you-section-head")
+            h1 Top Album
+            include ../assets/section_actions
+        div(class="you-gallery-grid")
+            each album in topAlbumsList
+                img(src="#{album.image}", alt="album foto cover")
+    div(class="you-section")
+        div(class="you-section-head")
+            h1 Top Artist 
+            include ../assets/section_actions
+        div(class="you-gallery-grid")
+            each artist in topArtistList
+                img(src="#{artist.image}", alt="artist foto cover")
+    div(class="you-section")        
+        div(class="you-section-head")
+            h1 Top Tracks
+            include ../assets/section_actions
+        div(class="you-section-main")
+            div(class="you-first-song")
+                img(src="#{topTracksList[0].trackImage}", alt="")
+                p #{topTracksList[0].trackName}
+                p #{topTracksList[0].artistName}
+            div(class="you-list-song")
+                div(class="you-list-row")
+                        p #
+                        p Title
+                        p Played
+                        p Time
+                each track, i in topTracksList
+                    div(class="you-list-row")
+                        p #{i+1}
+                        div
+                            p #{track.trackName}
+                            p #{track.artistName}
+                        p #{track.played}
+                        p #{MsToReadableTime(track.durationMs)}
+    div(class="you-section")
+        div(class="you-section-head")
+            h1 My Bento
+            include ../assets/section_actions
+        div(class="you-bento-grid")
+            div(class="you-bento-item polls-section you-bento-item-polls")
+                h2 Polls
+                div(class="you-polls-option")
+                    img(src="/images/profile_picture.jpg", alt="")
+                    p Are you indulging smth deriberately
+                div(class="you-polls-option")
+                    img(src="/images/profile_picture.jpg", alt="")
+                    p or just for the pleasure of it
+                div(class="you-polls-option")
+                    img(src="/images/profile_picture.jpg", alt="")
+                    p The best can happend any time
+                div(class="you-polls-option")
+                    img(src="/images/profile_picture.jpg", alt="")
+                    p We always do our best
+            div(class="you-bento-item")
+                h2 Total Streams
+                span(style="color:var(--EmphasisColor); font-size:var(--SpanFontSize)") #{totalStreams[0].streams}
+            div(class="you-bento-item you-bento-item-genders")
+                h2 Favorite Genders
+                div(class="music-tag-container")
+                    each tag in music_tags
+                        div(class="music-tag") #{tag}
+            div(class="you-bento-item")
+                h2 Quotes
+                i "I cannot see through the cracks"
+            div(class="you-bento-item you-bento-item-badges")
+                h2 Badges
+                div
+            div(class="you-bento-item you-bento-item-time")
+                h2 Listening Time
+                span(style="color:var(--EmphasisColor); font-size:var(--SpanFontSize)") 645
+                p(style="color:var(--EmphasisColor);") minutes
+                div(class="week-grid")
+                    each day in my_week_colors
+                        div
+                            p #{day.day}
+                            div(style='background-color:' + day.color + '; width:100%; height:30px;')

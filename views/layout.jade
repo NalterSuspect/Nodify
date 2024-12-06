@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    title Nodify
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/script.js')
+  body
+    block header 
+      include header
+    main
+      if currentPath == '/posts' || currentPath == '/you'
+        block profile
+          include user/profile
+      block content
+    block footer
+      include footer 
