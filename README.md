@@ -1,5 +1,5 @@
 # Nodify
-It's a project made when I was in school. I use spotify Api to display some random data about my taste in music and my favorite songs/albums
+It's a project made when I was in school. I used Spotify API to display some random data about my taste in music and my favorite songs/albums.
 
 ## Installation
 
