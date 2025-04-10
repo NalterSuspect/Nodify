@@ -7,4 +7,4 @@ npm install
 npm run serve
 
 ## Project status
-could have more interesting features but i get bored so STATUS: ENDED
+Could have more interesting features, but I got bored so STATUS: ENDED
